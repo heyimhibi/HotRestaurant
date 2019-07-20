@@ -15,9 +15,30 @@ app.use(express.json());
 var reservations = [
     {
       customerName: "Table1",
-      phoneNumber: "283534342",
+      phoneNumber: "2835343412452",
       customerEmail: "someguy@gmail.com",
-      customerID: "123456"
+      customerID: "123456956"
+
+    },
+    {
+      customerName: "Table2",
+      phoneNumber: "283534341232",
+      customerEmail: "someguy@gmail.com",
+      customerID: "12345667562"
+
+    },
+    {
+      customerName: "Table3",
+      phoneNumber: "283534342123",
+      customerEmail: "someguy@gmail.com",
+      customerID: "12345634579"
+
+    },
+    {
+      customerName: "Table4",
+      phoneNumber: "283534312342",
+      customerEmail: "someguy@gmail.com",
+      customerID: "123456000"
 
     }
  
@@ -58,23 +79,29 @@ app.get("/api/reservations", function(req, res) {
   //==============================================================
 //clear table functionality
 
-// app.delete("/api/clearReservations"), function (req, res) {
-//   console.log(res.reservations);
-  
-  // res.send(res.reservations);
-// }
-//=================================================================
+app.put("/api/clearReservations", function (req, res) {
+  reservations = [];
+  waitlist = [];
+  res.json(reservations);
+  res.json(waitlist);
+});
+  //=================================================================
 
 
 app.post("/api/newReservation", function(req, res) {
   var newReservation = req.body;
 
   console.log("old reservations", reservations)
-
-  reservations.push(newReservation);
+  if (reservations.length < 5) {
+    reservations.push(newReservation);
+  }
+  else{
+    waitList.push(newReservation);
+  }
+  
 
   console.log("server side reservation", reservations)
-  
+
   res.json(reservations);
 });
 
