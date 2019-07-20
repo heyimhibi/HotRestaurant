@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <!-- Heading -->
+    <!-- Heading
     <div class="container heading">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -23,22 +23,63 @@
                 <a class="btn btn-danger btn-lg" href="./reserve.html" role="button">Make Reservation</a>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
+      <hr>
+      <h2 class="text-center">Current Reservations and Waiting List</h2>
+      <br>
+
+      <div class="text-center">
+        <a href="./reserve.html"><button class="btn btn-lg btn-danger"> Make Reservation</button></a>
+        <a href="./home.html"><button class="btn btn-lg btn-primary"><span class="fa fa-home"></span></button></a>
+      </div>
     </div>
 
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- Current Tables in Use -->
+        <div class="card">
+          <div class="card-header">
+            <h4>Current Reservations</h4>
+          </div>
+          <div class="card-body">
+            <ul id="tableList" class="list-group"></ul>
+          </div>
+        </div>
+
+        <!-- Waiting List Card -->
+        <div class="card mt-4">
+          <div class="card-header">
+            <h4>Waiting List</h4>
+          </div>
+          <div class="card-body">
+            <ul id="waitList" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <footer class="footer mt-4">
+      <div class="container">
+        <p>Control Panel</p>
+        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API
+            Wait List</a>
+      </div>
+    </footer> -->
     <footer class= "footer">
         <div class="container">
-          <p><a href="/api/table">API link</a><a href="/api/waitinglist">Api waiting list</a>
+          <p><a href="/api/table">API link</a><a href="/api/waitList">Api waiting list</a>
 
         </div>
     </footer>
+  </div>
 
-
-
-
-
-
-
-
+</body>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
