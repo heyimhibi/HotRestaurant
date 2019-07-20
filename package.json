@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "the hottest restaurant in town, only has 5 tables",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyimhibi/HotRestaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyimhibi/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/heyimhibi/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
