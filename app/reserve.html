@@ -64,39 +64,39 @@
                 <label for="reserve-unique-id">ID</label>
                 <input type="text" class="form-control" id="reserve-unique-id">
               </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-primary submit" id="add-btn">Submit</button>
             </form>
           </div>
         </div>
       </div>
     </div>
-
-    <script type="text/javascript">
-      // Question: What does this code do?
-      $("#add-btn").on("click", function(event) {
-        event.preventDefault();
-        var newReservation = {
-          name: $("#reserve-name").val().trim(),
-          phoneNumber: $("#reserve-phone").val().trim(),
-          email: $("#reserve-email").val().trim(),
-          uniqueID: $("#reserve-unique-ID").val().trim()
-        };
-  
-        // Question: What does this code do??
-        $.post("/api/newReservation", newCharacter)
-          .then(function(data) {
-            console.log("add.html", data);
-            alert("Adding reservation...");
-          });
-      });
-    </script>
-    
   </div>
-  <footer class= "footer">
-    <div class="container">
-      <p><a href="/api/table">API link</a><a href="/api/waitinglist">Api waiting list</a>
 
-    </div>
+<!-- JS to send new reservation information to the server -->
+  <script type="text/javascript">
+    // Captures information from form
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#reserve-name").val().trim(),
+        phoneNumber: $("#reserve-phone").val().trim(),
+        email: $("#reserve-email").val().trim(),
+        uniqueID: $("#reserve-unique-ID").val().trim()
+      };
+
+      // Sends informations for new reservation to the db
+      $.post("/api/newReservation", newReservation)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding reservation...");
+        });
+    });
+  </script>
+
+<footer class= "footer">
+  <div class="container">
+    <p><a href="/api/table">API link</a><a href="/api/waitinglist">Api waiting list</a>
+  </div>  
 </footer>
 
 
