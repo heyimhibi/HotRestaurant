@@ -1,0 +1,20 @@
+Pages:
+Home page
+View reservation page
+Make reservation page
+
+Home page:
+Jumbotron explaining to book your seat
+Link to make reservation and view reservation
+API Table link (outside of jumbotron)
+API Wait List (outside of jumbotron)
+
+View reservation page:
+Jumbotron View reservations updates to link to homepage
+Current reservations section
+Waiting List section
+Control panel (clear table, api table link api wait list)
+
+Make Reservation page:
+Table includes four fields (name, phone number, email, and unique id)
+Submit button post method
