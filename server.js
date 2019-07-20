@@ -34,8 +34,18 @@ var reservations = [
 ];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "./app/home.html"));
   });
+
+
+app.get("/app/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "./app/reserve.html"));
+  });
+
+app.get("/app/table", function(req, res) {
+  res.sendFile(path.join(__dirname, "./app/table.html"));
+  });
+
 
 app.get("/api/reservations", function(req, res) {
     return res.json(reservations);
@@ -45,7 +55,30 @@ app.get("/api/reservations", function(req, res) {
     return res.json(waitList);
   });
 
+  //==============================================================
+//clear table functionality
+
+// app.delete("/api/clearReservations"), function (req, res) {
+//   console.log(res.reservations);
   
+  // res.send(res.reservations);
+// }
+//=================================================================
+
+
+app.post("/api/newReservation", function(req, res) {
+  var newReservation = req.body;
+
+  console.log("old reservations", reservations)
+
+  reservations.push(newReservation);
+
+  console.log("server side reservation", reservations)
+  
+  res.json(reservations);
+});
+
+
   // =============================================================
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
